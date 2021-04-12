@@ -8,4 +8,9 @@ class Post < ApplicationRecord
 
   scope :sorted, -> { order(created_at: :desc) }
 
+  def strftime
+    created_at.strftime('%b %d, %Y')
+  end
+
+
 end
