@@ -1,0 +1,11 @@
+<div id='welcome-container'>
+  <h1>Welcome to Tweeter Party</h1>
+
+  <p class='welcome-description'>
+    You'll be able to .
+  </p>
+
+  <%= render partial: './sessions/login_form' %>
+
+  <%= link_to 'New to Tweeter? Register Here', new_user_path, id: 'welcome-register-link' %>
+</div>
