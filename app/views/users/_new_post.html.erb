@@ -1,0 +1,7 @@
+  <div>
+    <% @post = Post.new %>
+    <%= form_with model: @post, local: true do |form| %>
+      <%= form.text_field :text, id: :text, value: "Enter your message" %>
+      <%= form.submit 'Submit Post' %>
+    <% end %>
+  </div>

@@ -20,8 +20,8 @@ RSpec.describe('Dashboard') do
         expect(page).to have_content("Welcome, #{@user.username}")
       end
 
-      xit "should have a button to 'Post Tweet'" do
-        expect(page).to have_button('Post Tweet')
+      it "should have a button to submit a post" do
+        expect(page).to have_button('Submit Post')
       end
 
       it 'should display all of the users tweets' do

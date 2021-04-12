@@ -7,7 +7,7 @@ Welcome, <%= current_user.username %>!
 <section class='posts'>
     <h2>My Posts:</h2>
     
-    <%# <%= render partial: '/users/create_post' %>
+    <%= render partial: '/users/new_post' %>
     
     <% unless current_user.posts.empty? %>
     <ul>
