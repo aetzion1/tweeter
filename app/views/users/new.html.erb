@@ -1,0 +1,17 @@
+<h1>Create an account!</h1>
+<%= form_with model: @user, local: true do |form| %>
+
+  <%= form.label :email, 'Email:' %>
+  <%= form.email_field :email, id: :email %>
+
+  <%= form.label :username, 'Username:' %>
+  <%= form.text_field :username, id: :username %>
+
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password, id: :password %>
+  
+  <%= form.label :password_confirmation, 'Confirm Password:' %>
+  <%= form.password_field :password_confirmation, id: :password_confirmation %>
+
+  <%= form.submit 'Create User' %>
+<% end %>
