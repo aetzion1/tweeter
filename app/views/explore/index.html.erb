@@ -1,0 +1,19 @@
+<% if current_user %>
+  <%= link_to 'My Dashboard', dashboard_path %>
+<% end %>
+
+<section class='feed'>
+    <h2>All Posts:</h2>
+    <ul>
+      <% @posts.sorted.each do |post| %>
+        <li id="post-<%= post.id %>">
+          <div><%= post.text %></div> 
+          <div><%= post.user.username %></div>
+          <div><%= post.strftime %></div>
+          <% if current_user %>
+            <%= button_to 'Follow' %>
+          <% end %>   
+        </li>
+      <% end %>
+    </ul>
+</section>

@@ -14,9 +14,11 @@
     <main>
       <nav>
         <% if current_user %>
+          <%= link_to 'Explore', explore_path %>
           <%= link_to 'Log out', logout_path %>
           <%= link_to 'Dashboard', dashboard_path%>
         <% else %>
+          <%= link_to 'Explore', explore_path %>
           <%= link_to 'Register Here', new_user_path %>
           <%= link_to 'Log In', login_path %>
         <% end %>
