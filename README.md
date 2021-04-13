@@ -27,16 +27,15 @@
   <p align="center">
     Simple Twitter clone built using Ruby on Rails
     This project is deployed on [Heroku here](https://tweeter-web.herokuapp.com)
-
     <br />
-    <a href="https://github.com/aetzion1/tweeter"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/aetzion1/tweeter">View Demo</a>
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
     ·
-    <a href="https://github.com/aetzion1/tweeter/issues">Report Bug</a>
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
-    <a href="https://github.com/aetzion1/tweeter/issues">Request Feature</a>
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </p>
 
@@ -80,6 +79,7 @@
 * [RSpec](https://github.com/rspec/rspec-rails)
 * [Circle CI](https://circleci.com/)
 * [Heroku](https://heroku.com/)
+* [Github Project Board](https://github.com/aetzion1/tweeter/projects)
 
 ### Strategic Decisions
 
