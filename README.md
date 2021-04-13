@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/aetzion1/tweeter">
-    <img src="lib/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="app/assets/images/logo.png" alt="Logo" width="90" height="80">
   </a>
 
   <h3 align="center">Tweeter</h3>
@@ -173,7 +173,7 @@ Project Link: [https://github.com/aetzion1/tweeter](https://github.com/aetzion1/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/aetzion1/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/aetzion1/tweeter.svg?style=for-the-badge
 [contributors-url]: https://github.com/aetzion1/tweeter/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/aetzion1/repo.svg?style=for-the-badge
 [forks-url]: https://github.com/aetzion1/tweeter/network/members
