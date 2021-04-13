@@ -34,6 +34,8 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -53,7 +55,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'launchy'
-  gem 'shoulda-matchers'
   gem 'simplecov'
 end
 

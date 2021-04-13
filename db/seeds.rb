@@ -5,38 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Posts.destory_all
+Post.destroy_all
+Relationship.destroy_all
 User.destroy_all
 
-john = User.create!(
-  username: 'johnnyman',
-  email: "john.doe@example.com",
-  password: "pw123"
-)
+# Users
+User.create!(username:  "johnnyman User", email: "john.doe@example.com", password: "pw123")
 
-jane = User.create!(
-  username: 'janelady',
-  email: "jane.doe@example.com",
-  password: "pw123"
-)
+99.times do |n|
+  username  = Faker::Space.constellation+"#{n+1}"
+  email = "example-#{n+1}@example.com"
+  password = "pw123"
+  User.create!(username: username, email: email, password: password)
+end
 
-Post.create!(
-  [
-    {
-      user: john,
-      text: "This is my first post! Neato!",
-    },
-    {
-      user: john,
-      text: "This is my second post! Going strong!",
-    },
-    {
-      user: jane,
-      text: "This is my first post - hope John follows me!",
-    },
-    {
-      user: jane,
-      text: "This is my second post - from Jane!",
-    }
-  ]
-)
+# Posts
+users = User.order(:created_at).take(6)
+50.times do
+  text = Faker::Lorem.sentence(5)
+  users.each { |user| user.posts.create!(text: text) }
+end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

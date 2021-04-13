@@ -1,17 +1,16 @@
 Welcome, <%= current_user.username %>!
 
-<%# <section class='button'> %>
-  <%# <%= button_to 'Post Tweet', post_path, method: "post" %>
-<%# </section> %>
+<section class="stats">
+  <%= render 'users/stats' %>
+</section>
 
 <section class='posts'>
     <h2>My Posts:</h2>
     
     <%= render partial: '/users/new_post' %>
     
-    <% unless current_user.posts.empty? %>
     <ul>
-      <% current_user.posts.sorted.each do |post| %>
+      <% current_user.feed.each do |post| %>
         <li id="post-<%= post.id %>">
           <div><%= post.text %></div> 
           <div><%= post.user.username %></div>
@@ -19,7 +18,4 @@ Welcome, <%= current_user.username %>!
         </li>
       <% end %>
     </ul>
-  <% else %>
-    <p>You currently have no posts!</p>
-  <% end %>
 </section>
