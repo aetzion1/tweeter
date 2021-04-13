@@ -10,9 +10,8 @@
           <div><%= post.text %></div> 
           <div><%= post.user.username %></div>
           <div><%= post.strftime %></div>
-          <% if current_user %>
-            <%= button_to 'Follow' %>
-          <% end %>   
+          <% @user = post.user %>
+          <%= render 'users/follow_form' if current_user %>
         </li>
       <% end %>
     </ul>

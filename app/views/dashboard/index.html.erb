@@ -1,8 +1,8 @@
 Welcome, <%= current_user.username %>!
 
-<%# <section class='button'> %>
-  <%# <%= button_to 'Post Tweet', post_path, method: "post" %>
-<%# </section> %>
+<section class="stats">
+  <%= render 'users/stats' %>
+</section>
 
 <section class='posts'>
     <h2>My Posts:</h2>
