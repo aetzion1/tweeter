@@ -16,6 +16,11 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_blank: false
   validates :password, confirmation: { case_sensitive: true }
 
+  #dashboard_feed
+  def feed
+    Post.where("user_id IN (?) OR user_id = ?", following_ids, id)
+  end
+
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
@@ -30,5 +35,4 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-
 end

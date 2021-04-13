@@ -4,12 +4,14 @@ RSpec.describe('Dashboard') do
   describe 'happy path' do
     describe 'as an authenticated user' do
       before :each do
-        @user = User.create!(username: 'BuffyVamp', email: "buffyslayer@example.com", password: "test")
+        @user1 = User.create!(username: 'BuffyVamp', email: "buffyslayer@example.com", password: "test")
+        @user2 = User.create!(username: 'Mike1', email: "mike@example.com", password: "test")
+        @user3 = User.create!(username: 'lanabanana', email: "lana@example.com", password: "test")
 
         visit login_path
 
-        fill_in :email, with: @user.email.upcase
-        fill_in :password, with: @user.password
+        fill_in :email, with: @user1.email.upcase
+        fill_in :password, with: @user1.password
 
         click_button 'Log In'
 
@@ -17,7 +19,7 @@ RSpec.describe('Dashboard') do
       end
 
       it "should display 'Welcome <username>!' at the top of page" do
-        expect(page).to have_content("Welcome, #{@user.username}")
+        expect(page).to have_content("Welcome, #{@user1.username}")
       end
 
       it "should have a button to submit a post" do
@@ -25,9 +27,9 @@ RSpec.describe('Dashboard') do
       end
 
       it 'should display all of the users tweets' do
-        post1 = Post.create!(text: 'My first tweet', user_id: @user.id)
-        post2 = Post.create!(text: 'My second tweet', user_id: @user.id)
-        post3 = Post.create!(text: 'My latest tweet', user_id: @user.id)
+        post1 = Post.create!(text: 'My first tweet', user_id: @user1.id)
+        post2 = Post.create!(text: 'My second tweet', user_id: @user1.id)
+        post3 = Post.create!(text: 'My latest tweet', user_id: @user1.id)
         visit dashboard_path
 
         expect(page).to have_content('My Posts:')
@@ -37,6 +39,21 @@ RSpec.describe('Dashboard') do
           expect(page).to have_content(post1.text)
           expect(page).to have_content(post1.user.username)
           expect(page).to have_content(post1.strftime)
+        end
+      end
+
+      it "feed should have the right posts" do
+        # Posts from followed user
+        @user3.posts.each do |post_following|
+          assert @user1.feed.include?(post_following)
+        end
+        # Posts from self
+        @user1.posts.each do |post_self|
+          assert @user1.feed.include?(post_self)
+        end
+        # Posts from unfollowed user
+        @user2.posts.each do |post_unfollowed|
+          assert_not @user1.feed.include?(post_unfollowed)
         end
       end
     end
