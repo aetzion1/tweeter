@@ -26,6 +26,8 @@
 
   <p align="center">
     Simple Twitter clone built using Ruby on Rails
+    This project is deployed on [Heroku here](https://tweeter-web.herokuapp.com)
+
     <br />
     <a href="https://github.com/aetzion1/tweeter"><strong>Explore the docs »</strong></a>
     <br />
