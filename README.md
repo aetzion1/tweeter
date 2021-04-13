@@ -19,13 +19,15 @@
 <br />
 <p align="center">
   <a href="https://github.com/aetzion1/tweeter">
-    <img src="app/assets/images/logo.png" alt="Logo" width="90" height="80">
+    <img src="app/assets/images/logo.png" alt="Logo" width="90" height="90">
   </a>
 
   <h3 align="center">Tweeter</h3>
 
   <p align="center">
-    project_description_TBD!
+    Simple Twitter clone built using Ruby on Rails
+    This project is deployed on [Heroku here](https://tweeter-web.herokuapp.com)
+
     <br />
     <a href="https://github.com/aetzion1/tweeter"><strong>Explore the docs »</strong></a>
     <br />
@@ -71,17 +73,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 ### Built With
 
 * [Ruby on Rails](https://rubyonrails.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [RSpec](https://github.com/rspec/rspec-rails)
 * [Circle CI](https://circleci.com/)
+* [Heroku](https://heroku.com/)
 
+### Strategic Decisions
 
-
+* Monolith vs Service-Oriented-Architecture
+  - Given the nature of the project (simple decison with few features), the decision was made to use a Monolith architecture
+  - If we were to design for scale, a SOA would have been utilized, with a Rails API Backend and a React frontend. For scale, GraphQL would have been a preferred method over ReSTful endpoints
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -101,35 +105,26 @@
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
-
-1. Clone the repo
+1. Fork repository
+2. Clone the repo fork
    ```sh
-   git clone https://github.com/aetzion1/tweeter.git
+   git clone https://github.com/USERNAME/tweeter.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
+3. Run bundle install
+  ```sh
+   bundle install
    ```
+4. Set up the databases 
+  ```sh
+   rails db:{create,migrate}
+   ```
+   
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -175,13 +170,13 @@ Project Link: [https://github.com/aetzion1/tweeter](https://github.com/aetzion1/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/aetzion1/tweeter.svg?style=for-the-badge
 [contributors-url]: https://github.com/aetzion1/tweeter/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/aetzion1/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/aetzion1/tweeter.svg?style=for-the-badge
 [forks-url]: https://github.com/aetzion1/tweeter/network/members
-[stars-shield]: https://img.shields.io/github/stars/aetzion1/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/aetzion1/tweeter.svg?style=for-the-badge
 [stars-url]: https://github.com/aetzion1/tweeter/stargazers
-[issues-shield]: https://img.shields.io/github/issues/aetzion1/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/aetzion1/tweeter.svg?style=for-the-badge
 [issues-url]: https://github.com/aetzion1/tweeter/issues
-[license-shield]: https://img.shields.io/github/license/aetzion1/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/aetzion1/tweeter.svg?style=for-the-badge
 [license-url]: https://github.com/aetzion1/tweeter/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/adametzion
