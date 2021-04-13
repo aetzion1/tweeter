@@ -79,13 +79,16 @@
 * [RSpec](https://github.com/rspec/rspec-rails)
 * [Circle CI](https://circleci.com/)
 * [Heroku](https://heroku.com/)
-* [Github Project Board](https://github.com/aetzion1/tweeter/projects)
+* [Github Project Board](https://github.com/aetzion1/tweeter/projects/1)
 
 ### Strategic Decisions
 
 * Monolith vs Service-Oriented-Architecture
   - Given the nature of the project (simple decison with few features), the decision was made to use a Monolith architecture
   - If we were to design for scale, a SOA would have been utilized, with a Rails API Backend and a React frontend. For scale, GraphQL would have been a preferred method over ReSTful endpoints
+* Extensions
+  - Decision was made to focus on more difficult Follow functionality, rather than Like functionality
+  - Decision was made to not build out retweet fiunctionality, and to focus time on testing and existing fucntionality
 
 <!-- GETTING STARTED -->
 ## Getting Started
